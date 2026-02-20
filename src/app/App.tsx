@@ -69,17 +69,15 @@ export default function App() {
         <div className="flex-1 min-h-0 flex flex-col">
           {/* Map container — grows when no selection, shrinks when selected */}
           <div
-            className="relative bg-[rgba(17,23,32,0.6)] overflow-hidden transition-all duration-500 ease-in-out"
+            className="relative bg-[rgba(17,23,32,0.6)] overflow-hidden transition-all duration-500 ease-in-out min-h-0"
             style={{ flex: selectedDistrictId ? "1 1 auto" : "1 1 auto" }}
           >
-            <div className="relative w-full h-full min-h-0">
-              <OsloMap
-                selectedDistrict={selectedDistrictId}
-                hoveredDistrict={hoveredDistrictId}
-                onSelectDistrict={setSelectedDistrictId}
-                onHoverDistrict={setHoveredDistrictId}
-              />
-            </div>
+            <OsloMap
+              selectedDistrict={selectedDistrictId}
+              hoveredDistrict={hoveredDistrictId}
+              onSelectDistrict={setSelectedDistrictId}
+              onHoverDistrict={setHoveredDistrictId}
+            />
 
             {/* Compact stats overlay — on map, only when no district selected */}
             {!selectedDistrictId && (

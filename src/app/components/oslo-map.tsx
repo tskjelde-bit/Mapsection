@@ -193,5 +193,5 @@ export function OsloMap({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return <div ref={containerRef} className="absolute inset-0" />;
+  return <div ref={containerRef} style={{ width: "100%", height: "100%" }} />;
 }
