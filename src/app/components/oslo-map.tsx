@@ -193,5 +193,5 @@ export function OsloMap({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return <div ref={containerRef} className="w-full h-full" style={{ minHeight: 400 }} />;
+  return <div ref={containerRef} className="absolute inset-0" />;
 }

@@ -72,7 +72,7 @@ export default function App() {
             className="relative bg-[rgba(17,23,32,0.6)] overflow-hidden transition-all duration-500 ease-in-out"
             style={{ flex: selectedDistrictId ? "1 1 auto" : "1 1 auto" }}
           >
-            <div className="relative w-full h-full">
+            <div className="relative w-full h-full min-h-0">
               <OsloMap
                 selectedDistrict={selectedDistrictId}
                 hoveredDistrict={hoveredDistrictId}
@@ -185,15 +185,13 @@ export default function App() {
           <div className="flex flex-row gap-5">
             {/* Map area */}
             <div className="w-[55%] xl:w-[50%]">
-              <div ref={mapRef} className="rounded-2xl border border-[rgba(48,58,72,0.3)] bg-[rgba(17,23,32,0.6)] p-4 relative overflow-hidden">
-                <div className="relative">
-                  <OsloMap
-                    selectedDistrict={selectedDistrictId}
-                    hoveredDistrict={hoveredDistrictId}
-                    onSelectDistrict={setSelectedDistrictId}
-                    onHoverDistrict={setHoveredDistrictId}
-                  />
-                </div>
+              <div ref={mapRef} className="rounded-2xl border border-[rgba(48,58,72,0.3)] bg-[rgba(17,23,32,0.6)] relative overflow-hidden" style={{ height: "70vh" }}>
+                <OsloMap
+                  selectedDistrict={selectedDistrictId}
+                  hoveredDistrict={hoveredDistrictId}
+                  onSelectDistrict={setSelectedDistrictId}
+                  onHoverDistrict={setHoveredDistrictId}
+                />
               </div>
             </div>
 
